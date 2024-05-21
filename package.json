@@ -6,7 +6,11 @@
   "author": "PetraCore",
   "license": "ISC",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "commit": "npm run build && git add dist && git commit",
+    "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "devDependencies": {
     "@eslint/js": "^9.3.0",
